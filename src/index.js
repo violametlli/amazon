@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { StateProvider } from './StateProvider';
+import reducer, {initialState} from './reducer'; 
 
+
+//inititlstate how does data layer looks like / reducer how we manipulate data
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+<React.StrictMode>
+  
+  <StateProvider initialState={initialState} reducer={reducer}>
+      <App />
+  </StateProvider>
+   
+</React.StrictMode>,
   document.getElementById('root')
 );
 
